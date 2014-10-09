@@ -94,9 +94,13 @@ BOARD_VOLD_MAX_PARTITIONS := 36
 
 # Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
-TARGET_RECOVERY_FSTAB := device/htc/evita/rootdir/fstab.evita
 BOARD_RECOVERY_BLDRMSG_OFFSET := 2048
 COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
+ifeq ($(RECOVERY_VARIANT),twrp)
+    TARGET_RECOVERY_FSTAB := device/htc/evita/recovery/twrp.fstab
+else
+    TARGET_RECOVERY_FSTAB := device/htc/evita/rootdir/fstab.evita
+endif
 
 # CWM
 BOARD_HAS_NO_SELECT_BUTTON := true
