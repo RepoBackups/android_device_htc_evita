@@ -47,18 +47,6 @@ PRODUCT_PACKAGES += \
     ueventd.evita.rc \
     fstab.evita
 
-# Recovery
-PRODUCT_PACKAGES += \
-    init.recovery.evita.rc \
-    lpm.rc \
-    chargeled \
-    choice_fn \
-    detect_key \
-    offmode_charging \
-    offmode_charging_res_images \
-    offmode_charging_warn_res_images \
-    power_test
-
 # NFC
 PRODUCT_PACKAGES += \
     libnfc \
