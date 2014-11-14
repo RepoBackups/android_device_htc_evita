@@ -47,6 +47,13 @@ PRODUCT_PACKAGES += \
     ueventd.evita.rc \
     fstab.evita
 
+# WiFi
+PRODUCT_PACKAGES += \
+    dhcpcd.conf \
+    hostapd \
+    wpa_supplicant \
+    wpa_supplicant.conf
+
 # NFC
 PRODUCT_PACKAGES += \
     libnfc \
