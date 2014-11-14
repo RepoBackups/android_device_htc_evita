@@ -137,31 +137,6 @@ BOARD_PROVIDES_LIBRIL := true
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += device/htc/evita/overlay
 
-# SELinux
-BOARD_SEPOLICY_DIRS += device/htc/evita/sepolicy
-
-BOARD_SEPOLICY_UNION += \
-    app.te \
-    bluetooth.te \
-    device.te \
-    domain.te \
-    drmserver.te \
-    file.te \
-    file_contexts \
-    hci_init.te \
-    healthd.te \
-    init.te \
-    init_shell.te \
-    keystore.te \
-    kickstart.te \
-    mediaserver.te \
-    rild.te \
-    surfaceflinger.te \
-    system.te \
-    ueventd.te \
-    wpa.te \
-    wpa_socket.te
-
 # Hardware tunables
 BOARD_HARDWARE_CLASS := device/htc/evita/cmhw
 
