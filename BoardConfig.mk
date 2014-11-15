@@ -119,6 +119,7 @@ TW_NO_SCREEN_BLANK := true
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 
 # Radio
+BOARD_USES_LEGACY_MMAP := true
 BOARD_RIL_CLASS := ../../../device/htc/evita/ril
 BOARD_RIL_NO_CELLINFOLIST := true
 
