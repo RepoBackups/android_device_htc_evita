@@ -118,6 +118,10 @@ TW_INCLUDE_JB_CRYPTO := true
 TW_NO_SCREEN_BLANK := true
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 
+# Radio
+BOARD_RIL_CLASS := ../../../device/htc/evita/ril
+BOARD_RIL_NO_CELLINFOLIST := true
+
 # Fonts
 EXTENDED_FONT_FOOTPRINT := true
 
@@ -129,9 +133,6 @@ TARGET_POWERHAL_VARIANT := evita
 
 # GPS
 BOARD_HAVE_NEW_QC_GPS := true
-
-# Radio
-BOARD_RIL_NO_CELLINFOLIST := true
 
 # Libril
 BOARD_PROVIDES_LIBRIL := true
