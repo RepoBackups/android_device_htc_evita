@@ -119,8 +119,6 @@ PRODUCT_COPY_FILES += \
     device/htc/evita/prebuilt/etc/firmware/a225_pfp.fw:/system/etc/firmware/a225_pfp.fw \
     device/htc/evita/prebuilt/etc/firmware/a225_pm4.fw:/system/etc/firmware/a225_pm4.fw \
     device/htc/evita/prebuilt/etc/firmware/a225p5_pm4.fw:/system/etc/firmware/a225p5_pm4.fw \
-    device/htc/evita/prebuilt/etc/firmware/leia_pfp_470.fw:/system/etc/firmware/leia_pfp_470.fw \
-    device/htc/evita/prebuilt/etc/firmware/leia_pm4_470.fw:/system/etc/firmware/leia_pm4_470.fw \
     device/htc/evita/prebuilt/etc/firmware/vidc_1080p.fw:/system/etc/firmware/vidc_1080p.fw \
     device/htc/evita/prebuilt/etc/firmware/wcnss.b00:/system/etc/firmware/wcnss.b00 \
     device/htc/evita/prebuilt/etc/firmware/wcnss.b01:/system/etc/firmware/wcnss.b01 \
@@ -173,18 +171,20 @@ PRODUCT_COPY_FILES += \
 
 # Adreno
 PRODUCT_COPY_FILES += \
-    device/htc/evita/prebuilt/lib/egl/eglsubAndroid.so:/system/lib/egl/eglsubAndroid.so \
-    device/htc/evita/prebuilt/lib/egl/libEGL_adreno200.so:/system/lib/egl/libEGL_adreno200.so \
-    device/htc/evita/prebuilt/lib/egl/libGLESv1_CM_adreno200.so:/system/lib/egl/libGLESv1_CM_adreno200.so \
-    device/htc/evita/prebuilt/lib/egl/libGLESv2_adreno200.so:/system/lib/egl/libGLESv2_adreno200.so \
-    device/htc/evita/prebuilt/lib/egl/libplayback_adreno200.so:/system/lib/egl/libplayback_adreno200.so \
-    device/htc/evita/prebuilt/lib/egl/libq3dtools_adreno200.so:/system/lib/egl/libq3dtools_adreno200.so \
-    device/htc/evita/prebuilt/lib/libC2D2.so:/system/lib/libC2D2.so \
-    device/htc/evita/prebuilt/lib/libOpenCL.so:/system/lib/libOpenCL.so \
-    device/htc/evita/prebuilt/lib/libOpenVG.so:/system/lib/libOpenVG.so \
-    device/htc/evita/prebuilt/lib/libc2d2_z180.so:/system/lib/libc2d2_z180.so \
-    device/htc/evita/prebuilt/lib/libgsl.so:/system/lib/libgsl.so \
-    device/htc/evita/prebuilt/lib/libsc-a2xx.so:/system/lib/libsc-a2xx.so
+    device/htc/evita/prebuilt/vendor/lib/egl/eglsubAndroid.so:/system/vendor/lib/egl/eglsubAndroid.so \
+    device/htc/evita/prebuilt/vendor/lib/egl/libEGL_adreno.so:/system/vendor/lib/egl/libEGL_adreno.so \
+    device/htc/evita/prebuilt/vendor/lib/egl/libGLESv1_CM_adreno.so:/system/vendor/lib/egl/libGLESv1_CM_adreno.so \
+    device/htc/evita/prebuilt/vendor/lib/egl/libGLESv2S3D_adreno.so:/system/vendor/lib/egl/libGLESv2S3D_adreno.so \
+    device/htc/evita/prebuilt/vendor/lib/egl/libGLESv2_adreno.so:/system/vendor/lib/egl/libGLESv2_adreno.so \
+    device/htc/evita/prebuilt/vendor/lib/egl/libq3dtools_adreno.so:/system/vendor/lib/egl/libq3dtools_adreno.so \
+    device/htc/evita/prebuilt/vendor/lib/libC2D2.so:/system/vendor/lib/libC2D2.so \
+    device/htc/evita/prebuilt/vendor/lib/libCB.so:/system/vendor/lib/libCB.so \
+    device/htc/evita/prebuilt/vendor/lib/libOpenCL.so:/system/lib/libOpenCL.so \
+    device/htc/evita/prebuilt/vendor/lib/libOpenVG.so:/system/lib/libOpenVG.so \
+    device/htc/evita/prebuilt/vendor/lib/libadreno_utils.so:/system/vendor/lib/libadreno_utils.so \
+    device/htc/evita/prebuilt/vendor/lib/libc2d2_z180.so:/system/vendor/lib/libc2d2_z180.so \
+    device/htc/evita/prebuilt/vendor/lib/libgsl.so:/system/vendor/lib/libgsl.so \
+    device/htc/evita/prebuilt/vendor/lib/libsc-a2xx.so:/system/lib/libsc-a2xx.so \
 
 # Hardware
 PRODUCT_COPY_FILES += \
