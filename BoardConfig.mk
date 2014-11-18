@@ -118,6 +118,9 @@ TW_INCLUDE_JB_CRYPTO := true
 TW_NO_SCREEN_BLANK := true
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 
+# Fonts
+EXTENDED_FONT_FOOTPRINT := true
+
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
