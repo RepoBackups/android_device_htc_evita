@@ -61,8 +61,6 @@ BOARD_EGL_CFG := device/htc/evita/prebuilt/lib/egl/egl.cfg
 # Camera
 BOARD_NEEDS_MEMORYHEAPPMEM := true
 USE_DEVICE_SPECIFIC_CAMERA := true
-COMMON_GLOBAL_CFLAGS += -DDISABLE_HW_ID_MATCH_CHECK
-COMMON_GLOBAL_CFLAGS += -DHTC_CAMERA_HARDWARE
 COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 
 # Wifi
@@ -100,28 +98,28 @@ else
 endif
 
 # CWM
-BOARD_HAS_NO_SELECT_BUTTON := true
-BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
-BOARD_RECOVERY_SWIPE := true
-TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/class/leds/lcd-backlight/brightness\"
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/htc/evita/recovery/source/recovery_keys.c
+BOARD_HAS_NO_SELECT_BUTTON := true
+BOARD_RECOVERY_SWIPE := true
+BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
+TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/class/leds/lcd-backlight/brightness\"
 
 # TWRP
 BOARD_HAS_NO_REAL_SDCARD := true
 DEVICE_RESOLUTION := 720x1280
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
+TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_FLASH_FROM_STORAGE := true
-TW_INTERNAL_STORAGE_PATH := "/sdcard"
-TW_INTERNAL_STORAGE_MOUNT_POINT := "sdcard"
 TW_INCLUDE_DUMLOCK := true
 TW_INCLUDE_JB_CRYPTO := true
+TW_INTERNAL_STORAGE_MOUNT_POINT := "sdcard"
+TW_INTERNAL_STORAGE_PATH := "/sdcard"
 TW_NO_SCREEN_BLANK := true
-TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 
 # Radio
-BOARD_USES_LEGACY_MMAP := true
 BOARD_RIL_CLASS := ../../../device/htc/evita/ril
 BOARD_RIL_NO_CELLINFOLIST := true
+BOARD_USES_LEGACY_MMAP := true
 
 # Fonts
 EXTENDED_FONT_FOOTPRINT := true
@@ -131,9 +129,6 @@ TARGET_PROVIDES_LIBLIGHT := true
 
 # Power
 TARGET_POWERHAL_VARIANT := evita
-
-# GPS
-BOARD_HAVE_NEW_QC_GPS := true
 
 # Libril
 BOARD_PROVIDES_LIBRIL := true
