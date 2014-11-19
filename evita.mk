@@ -13,7 +13,7 @@ PRODUCT_PACKAGES += \
     libaudio-resampler \
     tinymix
 
-# Graphics
+# Display
 PRODUCT_PACKAGES += \
     copybit.msm8960 \
     gralloc.msm8960 \
@@ -294,7 +294,6 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 
 # Device Properties
 PRODUCT_PROPERTY_OVERRIDES += \
-    com.qc.hardware=true \
     dalvik.vm.checkjni=false \
     dalvik.vm.dexopt-flags=m=v,o=y \
     dalvik.vm.lockprof.threshold=500 \
