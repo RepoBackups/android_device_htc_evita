@@ -56,7 +56,7 @@ TARGET_DISPLAY_USE_RETIRE_FENCE := true
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
 TARGET_DISPLAY_INSECURE_MM_HEAP := true
-BOARD_EGL_CFG := device/htc/evita/prebuilt/lib/egl/egl.cfg
+BOARD_EGL_CFG := device/htc/evita/prebuilt/vendor/lib/egl/egl.cfg
 
 # Camera
 BOARD_NEEDS_MEMORYHEAPPMEM := true
