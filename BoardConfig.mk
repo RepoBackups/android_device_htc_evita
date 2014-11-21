@@ -28,7 +28,7 @@ BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=evita and
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01700000
 TARGET_KERNEL_SOURCE := kernel/htc/evita
 TARGET_KERNEL_CONFIG := evita_defconfig
-TARGET_KERNEL_CUSTOM_TOOLCHAIN := linaro-4.9-cortex-a15
+#TARGET_KERNEL_CUSTOM_TOOLCHAIN := linaro-4.9-cortex-a15
 
 # QCOM
 BOARD_USES_QCOM_HARDWARE := true
