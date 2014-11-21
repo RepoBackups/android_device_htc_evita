@@ -82,26 +82,26 @@ PRODUCT_PACKAGES += \
 
 # Permissions
 PRODUCT_COPY_FILES += \
-    frameworks/base/nfc-extras/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
-    frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
-    frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
-    frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
-    frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
-    frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
-    frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
-    frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
-    frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml \
-    frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
-    frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
-    frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml \
-    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
-    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
-    frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
-    frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
-    frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
-    frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-    frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
-    frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
+    frameworks/base/nfc-extras/com.android.nfc_extras.xml:/system/etc/permissions/com.android.nfc_extras.xml \
+    frameworks/native/data/etc/android.hardware.bluetooth_le.xml:/system/etc/permissions/android.hardware.bluetooth_le.xml \
+    frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:/system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
+    frameworks/native/data/etc/android.hardware.camera.front.xml:/system/etc/permissions/android.hardware.camera.front.xml \
+    frameworks/native/data/etc/android.hardware.ethernet.xml:/system/etc/permissions/android.hardware.ethernet.xml \
+    frameworks/native/data/etc/android.hardware.location.gps.xml:/system/etc/permissions/android.hardware.location.gps.xml \
+    frameworks/native/data/etc/android.hardware.nfc.hce.xml:/system/etc/permissions/android.hardware.nfc.hce.xml \
+    frameworks/native/data/etc/android.hardware.nfc.xml:/system/etc/permissions/android.hardware.nfc.xml \
+    frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:/system/etc/permissions/android.hardware.sensor.gyroscope.xml \
+    frameworks/native/data/etc/android.hardware.sensor.light.xml:/system/etc/permissions/android.hardware.sensor.light.xml \
+    frameworks/native/data/etc/android.hardware.sensor.proximity.xml:/system/etc/permissions/android.hardware.sensor.proximity.xml \
+    frameworks/native/data/etc/android.hardware.telephony.cdma.xml:/system/etc/permissions/android.hardware.telephony.cdma.xml \
+    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:/system/etc/permissions/android.hardware.telephony.gsm.xml \
+    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:/system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
+    frameworks/native/data/etc/android.hardware.usb.accessory.xml:/system/etc/permissions/android.hardware.usb.accessory.xml \
+    frameworks/native/data/etc/android.hardware.usb.host.xml:/system/etc/permissions/android.hardware.usb.host.xml \
+    frameworks/native/data/etc/android.hardware.wifi.direct.xml:/system/etc/permissions/android.hardware.wifi.direct.xml \
+    frameworks/native/data/etc/android.hardware.wifi.xml:/system/etc/permissions/android.hardware.wifi.xml \
+    frameworks/native/data/etc/android.software.sip.voip.xml:/system/etc/permissions/android.software.sip.voip.xml \
+    frameworks/native/data/etc/handheld_core_hardware.xml:/system/etc/permissions/handheld_core_hardware.xml
 
 # Binary
 PRODUCT_COPY_FILES += \
@@ -132,17 +132,17 @@ PRODUCT_COPY_FILES += \
 
 # Media Config
 PRODUCT_COPY_FILES += \
-    device/htc/evita/prebuilt/etc/media_codecs.xml:system/etc/media_codecs.xml \
-    device/htc/evita/prebuilt/etc/media_profiles.xml:system/etc/media_profiles.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
+    device/htc/evita/prebuilt/etc/media_codecs.xml:/system/etc/media_codecs.xml \
+    device/htc/evita/prebuilt/etc/media_profiles.xml:/system/etc/media_profiles.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:/system/etc/media_codecs_google_audio.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:/system/etc/media_codecs_google_telephony.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:/system/etc/media_codecs_google_video.xml
 
 # GPS and Host Config
 PRODUCT_COPY_FILES += \
     device/htc/evita/prebuilt/etc/agps_rm:/system/etc/agps_rm \
-    device/htc/evita/prebuilt/etc/gps.conf:system/etc/gps.conf \
-    device/htc/evita/prebuilt/etc/host:system/etc/host \
+    device/htc/evita/prebuilt/etc/gps.conf:/system/etc/gps.conf \
+    device/htc/evita/prebuilt/etc/host:/system/etc/host \
     device/htc/evita/prebuilt/etc/init.d/04host:/system/etc/init.d/04host
 
 # Qualcomm Scripts
@@ -152,23 +152,23 @@ PRODUCT_COPY_FILES += \
 
 # WPA, WIFI, NFC and Thermal config
 PRODUCT_COPY_FILES += \
-    device/htc/evita/prebuilt/etc/nfcee_access.xml:system/etc/nfcee_access.xml \
-    device/htc/evita/prebuilt/etc/thermald.conf:system/etc/thermald.conf \
+    device/htc/evita/prebuilt/etc/nfcee_access.xml:/system/etc/nfcee_access.xml \
+    device/htc/evita/prebuilt/etc/thermald.conf:/system/etc/thermald.conf \
     device/htc/evita/prebuilt/etc/wifi/p2p_supplicant_overlay.conf:/system/etc/wifi/p2p_supplicant_overlay.conf \
     device/htc/evita/prebuilt/etc/wifi/wpa_supplicant_overlay.conf:/system/etc/wifi/wpa_supplicant_overlay.conf \
     device/htc/evita/prebuilt/etc/wifi/WCNSS_qcom_cfg.ini:/system/etc/wifi/WCNSS_qcom_cfg.ini
 
 # Sound Configs
 PRODUCT_COPY_FILES += \
-    device/htc/evita/prebuilt/etc/audio_policy.conf:system/etc/audio_policy.conf \
+    device/htc/evita/prebuilt/etc/audio_policy.conf:/system/etc/audio_policy.conf \
     device/htc/evita/prebuilt/etc/snd_soc_msm/snd_soc_msm_2x:/system/etc/snd_soc_msm/snd_soc_msm_2x \
-    device/htc/evita/prebuilt/etc/soundimage/srs_bypass.cfg:system/etc/soundimage/srs_bypass.cfg \
-    device/htc/evita/prebuilt/etc/soundimage/srs_geq10.cfg:system/etc/soundimage/srs_geq10.cfg \
-    device/htc/evita/prebuilt/etc/soundimage/srs_global.cfg:system/etc/soundimage/srs_global.cfg \
-    device/htc/evita/prebuilt/etc/soundimage/srsfx_trumedia_51.cfg:system/etc/soundimage/srsfx_trumedia_51.cfg \
-    device/htc/evita/prebuilt/etc/soundimage/srsfx_trumedia_movie.cfg:system/etc/soundimage/srsfx_trumedia_movie.cfg \
-    device/htc/evita/prebuilt/etc/soundimage/srsfx_trumedia_music.cfg:system/etc/soundimage/srsfx_trumedia_music.cfg \
-    device/htc/evita/prebuilt/etc/soundimage/srsfx_trumedia_voice.cfg:system/etc/soundimage/srsfx_trumedia_voice.cfg
+    device/htc/evita/prebuilt/etc/soundimage/srs_bypass.cfg:/system/etc/soundimage/srs_bypass.cfg \
+    device/htc/evita/prebuilt/etc/soundimage/srs_geq10.cfg:/system/etc/soundimage/srs_geq10.cfg \
+    device/htc/evita/prebuilt/etc/soundimage/srs_global.cfg:/system/etc/soundimage/srs_global.cfg \
+    device/htc/evita/prebuilt/etc/soundimage/srsfx_trumedia_51.cfg:/system/etc/soundimage/srsfx_trumedia_51.cfg \
+    device/htc/evita/prebuilt/etc/soundimage/srsfx_trumedia_movie.cfg:/system/etc/soundimage/srsfx_trumedia_movie.cfg \
+    device/htc/evita/prebuilt/etc/soundimage/srsfx_trumedia_music.cfg:/system/etc/soundimage/srsfx_trumedia_music.cfg \
+    device/htc/evita/prebuilt/etc/soundimage/srsfx_trumedia_voice.cfg:/system/etc/soundimage/srsfx_trumedia_voice.cfg
 
 # Adreno
 PRODUCT_COPY_FILES += \
@@ -180,12 +180,12 @@ PRODUCT_COPY_FILES += \
     device/htc/evita/prebuilt/vendor/lib/egl/libq3dtools_adreno.so:/system/vendor/lib/egl/libq3dtools_adreno.so \
     device/htc/evita/prebuilt/vendor/lib/libC2D2.so:/system/vendor/lib/libC2D2.so \
     device/htc/evita/prebuilt/vendor/lib/libCB.so:/system/vendor/lib/libCB.so \
-    device/htc/evita/prebuilt/vendor/lib/libOpenCL.so:/system/lib/libOpenCL.so \
-    device/htc/evita/prebuilt/vendor/lib/libOpenVG.so:/system/lib/libOpenVG.so \
+    device/htc/evita/prebuilt/vendor/lib/libOpenCL.so:/system/vendor/lib/libOpenCL.so \
+    device/htc/evita/prebuilt/vendor/lib/libOpenVG.so:/system/vendor/lib/libOpenVG.so \
     device/htc/evita/prebuilt/vendor/lib/libadreno_utils.so:/system/vendor/lib/libadreno_utils.so \
     device/htc/evita/prebuilt/vendor/lib/libc2d2_z180.so:/system/vendor/lib/libc2d2_z180.so \
     device/htc/evita/prebuilt/vendor/lib/libgsl.so:/system/vendor/lib/libgsl.so \
-    device/htc/evita/prebuilt/vendor/lib/libsc-a2xx.so:/system/lib/libsc-a2xx.so \
+    device/htc/evita/prebuilt/vendor/lib/libsc-a2xx.so:/system/vendor/lib/libsc-a2xx.so
 
 # Hardware
 PRODUCT_COPY_FILES += \
@@ -284,15 +284,15 @@ PRODUCT_COPY_FILES += \
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
-    device/htc/evita/prebuilt/usr/keylayout/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl \
-    device/htc/evita/prebuilt/usr/keylayout/keypad_8960.kl:system/usr/keylayout/keypad_8960.kl \
-    device/htc/evita/prebuilt/usr/keylayout/msm8960-snd-card_Button_Jack.kl:system/usr/keylayout/msm8960-snd-card_Button_Jack.kl \
-    device/htc/evita/prebuilt/usr/keylayout/synaptics-rmi-touchscreen.kl:system/usr/keylayout/synaptics-rmi-touchscreen.kl
+    device/htc/evita/prebuilt/usr/keylayout/h2w_headset.kl:/system/usr/keylayout/h2w_headset.kl \
+    device/htc/evita/prebuilt/usr/keylayout/keypad_8960.kl:/system/usr/keylayout/keypad_8960.kl \
+    device/htc/evita/prebuilt/usr/keylayout/msm8960-snd-card_Button_Jack.kl:/system/usr/keylayout/msm8960-snd-card_Button_Jack.kl \
+    device/htc/evita/prebuilt/usr/keylayout/synaptics-rmi-touchscreen.kl:/system/usr/keylayout/synaptics-rmi-touchscreen.kl
 
 # Input Device Config
 PRODUCT_COPY_FILES += \
-    device/htc/evita/prebuilt/usr/idc/projector_input.idc:system/usr/idc/projector_input.idc \
-    device/htc/evita/prebuilt/usr/idc/synaptics-rmi-touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc
+    device/htc/evita/prebuilt/usr/idc/projector_input.idc:/system/usr/idc/projector_input.idc \
+    device/htc/evita/prebuilt/usr/idc/synaptics-rmi-touchscreen.idc:/system/usr/idc/synaptics-rmi-touchscreen.idc
 
 # Device Default Properties
 ADDITIONAL_DEFAULT_PROPERTIES += \
