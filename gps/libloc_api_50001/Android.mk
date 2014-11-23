@@ -84,7 +84,9 @@ LOCAL_CFLAGS += \
      -fno-short-enums \
      -D_ANDROID_
 
-LOCAL_C_INCLUDES:= $(TARGET_OUT_HEADERS)/gps.utils
+LOCAL_C_INCLUDES:= \
+    $(TARGET_OUT_HEADERS)/gps.utils \
+    device/htc/evita/gps/ulp/inc
 
 LOCAL_PRELINK_MODULE := false
 
@@ -113,7 +115,10 @@ LOCAL_CFLAGS += \
     -fno-short-enums \
     -D_ANDROID_ \
 
-LOCAL_C_INCLUDES:= $(TARGET_OUT_HEADERS)/gps.utils
+## Includes
+LOCAL_C_INCLUDES:= \
+    $(TARGET_OUT_HEADERS)/gps.utils \
+    device/htc/evita/gps/ulp/inc
 
 LOCAL_PRELINK_MODULE := false
 LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/hw

@@ -1,6 +1,6 @@
 # Inherit
-$(call inherit-product, build/target/product/languages_full.mk)
-$(call inherit-product, build/target/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
 # Audio
@@ -56,7 +56,9 @@ PRODUCT_PACKAGES += \
     dhcpcd.conf \
     hostapd \
     wpa_supplicant \
-    wpa_supplicant.conf
+    wpa_supplicant.conf \
+    libwcnss_qmi \
+    wcnss_service
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -76,8 +78,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Torch \
     qrngd \
-    libwcnss_qmi \
-    wcnss_service \
     com.android.future.usb.accessory
 
 # Permissions
@@ -102,6 +102,12 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.xml:/system/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/android.software.sip.voip.xml:/system/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:/system/etc/permissions/handheld_core_hardware.xml
+
+# Libstagefright
+PRODUCT_COPY_FILES += \
+    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:/system/etc/media_codecs_google_audio.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:/system/etc/media_codecs_google_telephony.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:/system/etc/media_codecs_google_video.xml
 
 # Binary
 PRODUCT_COPY_FILES += \
@@ -130,13 +136,10 @@ PRODUCT_COPY_FILES += \
     device/htc/evita/prebuilt/etc/firmware/wlan/prima/WCNSS_cfg.dat:/system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
     device/htc/evita/prebuilt/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin:/system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 
-# Media Config
+# Media
 PRODUCT_COPY_FILES += \
     device/htc/evita/prebuilt/etc/media_codecs.xml:/system/etc/media_codecs.xml \
-    device/htc/evita/prebuilt/etc/media_profiles.xml:/system/etc/media_profiles.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:/system/etc/media_codecs_google_audio.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:/system/etc/media_codecs_google_telephony.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:/system/etc/media_codecs_google_video.xml
+    device/htc/evita/prebuilt/etc/media_profiles.xml:/system/etc/media_profiles.xml
 
 # GPS and Host Config
 PRODUCT_COPY_FILES += \
@@ -170,28 +173,11 @@ PRODUCT_COPY_FILES += \
     device/htc/evita/prebuilt/etc/soundimage/srsfx_trumedia_music.cfg:/system/etc/soundimage/srsfx_trumedia_music.cfg \
     device/htc/evita/prebuilt/etc/soundimage/srsfx_trumedia_voice.cfg:/system/etc/soundimage/srsfx_trumedia_voice.cfg
 
-# Adreno
-PRODUCT_COPY_FILES += \
-    device/htc/evita/prebuilt/vendor/lib/egl/eglsubAndroid.so:/system/vendor/lib/egl/eglsubAndroid.so \
-    device/htc/evita/prebuilt/vendor/lib/egl/libEGL_adreno.so:/system/vendor/lib/egl/libEGL_adreno.so \
-    device/htc/evita/prebuilt/vendor/lib/egl/libGLESv1_CM_adreno.so:/system/vendor/lib/egl/libGLESv1_CM_adreno.so \
-    device/htc/evita/prebuilt/vendor/lib/egl/libGLESv2S3D_adreno.so:/system/vendor/lib/egl/libGLESv2S3D_adreno.so \
-    device/htc/evita/prebuilt/vendor/lib/egl/libGLESv2_adreno.so:/system/vendor/lib/egl/libGLESv2_adreno.so \
-    device/htc/evita/prebuilt/vendor/lib/egl/libq3dtools_adreno.so:/system/vendor/lib/egl/libq3dtools_adreno.so \
-    device/htc/evita/prebuilt/vendor/lib/libC2D2.so:/system/vendor/lib/libC2D2.so \
-    device/htc/evita/prebuilt/vendor/lib/libCB.so:/system/vendor/lib/libCB.so \
-    device/htc/evita/prebuilt/vendor/lib/libOpenCL.so:/system/vendor/lib/libOpenCL.so \
-    device/htc/evita/prebuilt/vendor/lib/libOpenVG.so:/system/vendor/lib/libOpenVG.so \
-    device/htc/evita/prebuilt/vendor/lib/libadreno_utils.so:/system/vendor/lib/libadreno_utils.so \
-    device/htc/evita/prebuilt/vendor/lib/libc2d2_z180.so:/system/vendor/lib/libc2d2_z180.so \
-    device/htc/evita/prebuilt/vendor/lib/libgsl.so:/system/vendor/lib/libgsl.so \
-    device/htc/evita/prebuilt/vendor/lib/libsc-a2xx.so:/system/vendor/lib/libsc-a2xx.so
-
 # Hardware
 PRODUCT_COPY_FILES += \
+    device/htc/evita/prebuilt/lib/hw/camera.vendor.msm8960.so:/system/lib/hw/camera.vendor.msm8960.so \
     device/htc/evita/prebuilt/lib/hw/nfc.default.so:/system/lib/hw/nfc.default.so \
-    device/htc/evita/prebuilt/lib/hw/sensors.default.so:/system/lib/hw/sensors.default.so \
-    device/htc/evita/prebuilt/lib/hw/camera.vendor.msm8960.so:/system/lib/hw/camera.vendor.msm8960.so
+    device/htc/evita/prebuilt/lib/hw/sensors.default.so:/system/lib/hw/sensors.default.so
 
 # Audio
 PRODUCT_COPY_FILES += \
@@ -200,6 +186,8 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_COPY_FILES += \
+    device/htc/evita/prebuilt/lib/libBeautyChat.so:/system/lib/libBeautyChat.so \
+    device/htc/evita/prebuilt/lib/libHTC_DIS.so:/system/lib/libHTC_DIS.so \
     device/htc/evita/prebuilt/lib/libcam_oem_plugin.so:/system/lib/libcam_oem_plugin.so \
     device/htc/evita/prebuilt/lib/libcameraasd.so:/system/lib/libcameraasd.so \
     device/htc/evita/prebuilt/lib/libcameraface.so:/system/lib/libcameraface.so \
@@ -219,6 +207,8 @@ PRODUCT_COPY_FILES += \
     device/htc/evita/prebuilt/lib/libmmcamera_wavelet_lib.so:/system/lib/libmmcamera_wavelet_lib.so \
     device/htc/evita/prebuilt/lib/libmmipl.so:/system/lib/libmmipl.so \
     device/htc/evita/prebuilt/lib/libmmjpeg.so:/system/lib/libmmjpeg.so \
+    device/htc/evita/prebuilt/lib/libmmmpod.so:/system/lib/libmmmpod.so \
+    device/htc/evita/prebuilt/lib/libmmstillomx.so:/system/lib/libmmstillomx.so \
     device/htc/evita/prebuilt/lib/liboemcamera.so:/system/lib/liboemcamera.so \
     device/htc/evita/prebuilt/lib/libposteffect.so:/system/lib/libposteffect.so
 
@@ -263,24 +253,16 @@ PRODUCT_COPY_FILES += \
     device/htc/evita/prebuilt/lib/libril-qc-qmi-1.so:/system/lib/libril-qc-qmi-1.so \
     device/htc/evita/prebuilt/lib/libril-qcril-hook-oem.so:/system/lib/libril-qcril-hook-oem.so
 
-# Misc
+# Media
 PRODUCT_COPY_FILES += \
-    device/htc/evita/prebuilt/lib/libBeautyChat.so:/system/lib/libBeautyChat.so \
     device/htc/evita/prebuilt/lib/libExtendedExtractor.so:/system/lib/libExtendedExtractor.so \
-    device/htc/evita/prebuilt/lib/libHTC_DIS.so:/system/lib/libHTC_DIS.so \
     device/htc/evita/prebuilt/lib/libI420colorconvert.so:/system/lib/libI420colorconvert.so \
-    device/htc/evita/prebuilt/lib/libgeofence.so:/system/lib/libgeofence.so \
-    device/htc/evita/prebuilt/lib/libloc_api_v02.so:/system/lib/libloc_api_v02.so \
-    device/htc/evita/prebuilt/lib/libmm-color-convertor.so:/system/lib/libmm-color-convertor.so \
-    device/htc/evita/prebuilt/lib/libmmmpod.so:/system/lib/libmmmpod.so \
-    device/htc/evita/prebuilt/lib/libmmstillomx.so:/system/lib/libmmstillomx.so
+    device/htc/evita/prebuilt/lib/libmm-color-convertor.so:/system/lib/libmm-color-convertor.so
 
-# Vendor
+# GPS
 PRODUCT_COPY_FILES += \
-    device/htc/evita/prebuilt/vendor/firmware/libpn544_fw.so:/system/vendor/firmware/libpn544_fw.so \
-    device/htc/evita/prebuilt/vendor/lib/libWVStreamControlAPI_L3.so:/system/vendor/lib/libWVStreamControlAPI_L3.so \
-    device/htc/evita/prebuilt/vendor/lib/libqc-opt.so:/system/vendor/lib/libqc-opt.so \
-    device/htc/evita/prebuilt/vendor/lib/libwvm.so:/system/vendor/lib/libwvm.so
+    device/htc/evita/prebuilt/lib/libgeofence.so:/system/lib/libgeofence.so \
+    device/htc/evita/prebuilt/lib/libloc_api_v02.so:/system/lib/libloc_api_v02.so
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
@@ -294,52 +276,113 @@ PRODUCT_COPY_FILES += \
     device/htc/evita/prebuilt/usr/idc/projector_input.idc:/system/usr/idc/projector_input.idc \
     device/htc/evita/prebuilt/usr/idc/synaptics-rmi-touchscreen.idc:/system/usr/idc/synaptics-rmi-touchscreen.idc
 
-# Device Default Properties
+# Graphics
+PRODUCT_COPY_FILES += \
+    device/htc/evita/prebuilt/vendor/lib/egl/eglsubAndroid.so:/system/vendor/lib/egl/eglsubAndroid.so \
+    device/htc/evita/prebuilt/vendor/lib/egl/libEGL_adreno.so:/system/vendor/lib/egl/libEGL_adreno.so \
+    device/htc/evita/prebuilt/vendor/lib/egl/libGLESv1_CM_adreno.so:/system/vendor/lib/egl/libGLESv1_CM_adreno.so \
+    device/htc/evita/prebuilt/vendor/lib/egl/libGLESv2S3D_adreno.so:/system/vendor/lib/egl/libGLESv2S3D_adreno.so \
+    device/htc/evita/prebuilt/vendor/lib/egl/libGLESv2_adreno.so:/system/vendor/lib/egl/libGLESv2_adreno.so \
+    device/htc/evita/prebuilt/vendor/lib/egl/libq3dtools_adreno.so:/system/vendor/lib/egl/libq3dtools_adreno.so \
+    device/htc/evita/prebuilt/vendor/lib/libC2D2.so:/system/vendor/lib/libC2D2.so \
+    device/htc/evita/prebuilt/vendor/lib/libCB.so:/system/vendor/lib/libCB.so \
+    device/htc/evita/prebuilt/vendor/lib/libOpenCL.so:/system/vendor/lib/libOpenCL.so \
+    device/htc/evita/prebuilt/vendor/lib/libOpenVG.so:/system/vendor/lib/libOpenVG.so \
+    device/htc/evita/prebuilt/vendor/lib/libadreno_utils.so:/system/vendor/lib/libadreno_utils.so \
+    device/htc/evita/prebuilt/vendor/lib/libc2d2_z180.so:/system/vendor/lib/libc2d2_z180.so \
+    device/htc/evita/prebuilt/vendor/lib/libgsl.so:/system/vendor/lib/libgsl.so \
+    device/htc/evita/prebuilt/vendor/lib/libsc-a2xx.so:/system/vendor/lib/libsc-a2xx.so
+
+# Widevine
+PRODUCT_COPY_FILES += \
+    device/htc/evita/prebuilt/vendor/lib/libWVStreamControlAPI_L3.so:/system/vendor/lib/libWVStreamControlAPI_L3.so \
+    device/htc/evita/prebuilt/vendor/lib/libwvm.so:/system/vendor/lib/libwvm.so
+
+# NFC and Qualcomm Extra
+PRODUCT_COPY_FILES += \
+    device/htc/evita/prebuilt/vendor/lib/libqc-opt.so:/system/vendor/lib/libqc-opt.so \
+    device/htc/evita/prebuilt/vendor/firmware/libpn544_fw.so:/system/vendor/firmware/libpn544_fw.so
+
+# Default Properties
 ADDITIONAL_DEFAULT_PROPERTIES += \
     persist.sys.root_access=3 \
     ro.adb.secure=3 \
     ro.secure=0
 
-# Device Properties
+# Extra
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.checkjni=false \
     dalvik.vm.dexopt-flags=m=v,o=y \
     dalvik.vm.lockprof.threshold=500 \
+    persist.service.adb.enable=1 \
+    persist.service.debuggable=1 \
+    persist.sys.purgeable_assets=1 \
+    persist.sys.use_16bpp_alpha=1 \
+    ro.com.google.locationfeatures=1 \
+    ro.debuggable=1 \
+    ro.ksm.default=1 \
+    ro.setupwizard.enable_bypass=1 \
+    ro.sf.lcd_density=320
+
+# Audio
+PRODUCT_PROPERTY_OVERRIDES += \
+    lpa.decode=true \
+    persist.audio.fluence.mode=endfire \
+    persist.audio.vr.enable=false \
+    persist.audio.handset.mic=digital \
+    persist.audio.speaker.location=high \
+    ro.qc.sdk.audio.fluencetype=fluence
+
+# Display
+PRODUCT_PROPERTY_OVERRIDES += \
     debug.composition.type=dyn \
     debug.egl.hw=1 \
     debug.mdpcomp.logs=0 \
     debug.sf.hw=1 \
-    lpa.decode=true \
-    media.stagefright.use-awesome=true \
-    persist.audio.fluence.mode=endfire \
-    persist.audio.handset.mic=digital \
-    persist.audio.speaker.location=high \
-    persist.audio.vr.enable=false \
-    persist.hwc.mdpcomp.enable=true \
-    persist.service.adb.enable=1 \
-    persist.service.debuggable=1 \
-    persist.sys.purgeable_assets=1 \
-    persist.sys.usb.config=mtp,adb \
-    persist.sys.use_16bpp_alpha=1 \
-    persist.thermal.monitor=true \
-    ro.baseband.arch=msm \
-    ro.debuggable=1 \
-    ro.com.google.locationfeatures=1 \
-    ro.ksm.default=1 \
     ro.opengles.version=131072 \
-    ro.qc.sdk.audio.fluencetype=fluence \
-    ro.qualcomm.bt.hci_transport=smd \
-    ro.setupwizard.enable_bypass=1 \
-    ro.sf.lcd_density=320 \
+    persist.hwc.mdpcomp.enable=true
+
+# Media
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.stagefright.use-awesome=true
+
+# Thermal
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.thermal.monitor=true
+
+# Radio
+PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.call_ring.multiple=0 \
-    ro.vendor.extension_library=/system/vendor/lib/libqc-opt.so \
-    ro.vold.umsdirtyratio=40 \
-    wifi.interface=wlan0 \
+    ro.baseband.arch=msm
+
+# WiFi
+PRODUCT_PROPERTY_OVERRIDES += \
+    wifi.interface=wlan0
     wifi.supplicant_scan_interval=255
 
-# Device Tags
+# Bluetooth
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.qualcomm.bt.hci_transport=smd
+
+# NFC
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.nfc.fw_download=true \
+    debug.nfc.fw_boot_download=false \
+    debug.nfc.se=true \
+    ro.nfc.port=I2C
+
+# UMS
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.usb.config=mtp,adb \
+    ro.vold.umsdirtyratio=40
+
+# Perf
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.extension_library=/system/vendor/lib/libqc-opt.so
+
+# Tags
 PRODUCT_TAGS += dalvik.gc.type-precise
 
-# Device Density
+# Density
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
