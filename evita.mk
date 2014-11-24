@@ -136,7 +136,7 @@ PRODUCT_COPY_FILES += \
     device/htc/evita/prebuilt/etc/firmware/wlan/prima/WCNSS_cfg.dat:/system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
     device/htc/evita/prebuilt/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin:/system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 
-# Media
+# Media Config
 PRODUCT_COPY_FILES += \
     device/htc/evita/prebuilt/etc/media_codecs.xml:/system/etc/media_codecs.xml \
     device/htc/evita/prebuilt/etc/media_profiles.xml:/system/etc/media_profiles.xml
@@ -357,7 +357,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # WiFi
 PRODUCT_PROPERTY_OVERRIDES += \
-    wifi.interface=wlan0
+    wifi.interface=wlan0 \
     wifi.supplicant_scan_interval=255
 
 # Bluetooth
