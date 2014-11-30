@@ -122,10 +122,6 @@ BOARD_USES_LEGACY_MMAP := true
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += device/htc/evita/sepolicy
 
-BOARD_SEPOLICY_UNION += \
-    property_contexts \
-    recovery.te
-
 # Vold
 BOARD_VOLD_MAX_PARTITIONS := 37
 
