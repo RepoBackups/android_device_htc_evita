@@ -154,6 +154,7 @@ PRODUCT_COPY_FILES += \
 
 # WPA, WIFI, NFC and Thermal config
 PRODUCT_COPY_FILES += \
+    device/htc/evita/prebuilt/etc/hostapd/hostapd_default.conf:/system/etc/hostapd/hostapd_default.conf \
     device/htc/evita/prebuilt/etc/nfcee_access.xml:/system/etc/nfcee_access.xml \
     device/htc/evita/prebuilt/etc/thermald.conf:/system/etc/thermald.conf \
     device/htc/evita/prebuilt/etc/wifi/p2p_supplicant_overlay.conf:/system/etc/wifi/p2p_supplicant_overlay.conf \
