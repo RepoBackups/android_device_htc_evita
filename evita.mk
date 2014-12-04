@@ -77,7 +77,6 @@ PRODUCT_PACKAGES += \
 # Misc
 PRODUCT_PACKAGES += \
     Torch \
-    qrngd \
     com.android.future.usb.accessory
 
 # Permissions
