@@ -24,4 +24,4 @@ And also need to compile
 
 1 - https://github.com/Arc-Team/android_kernel_htc_evita/tree/cm-12.0
 
-2 - https://github.com/Arc-Team/android_prebuilt_linaro/tree/cm-12.0
+2 - https://github.com/Arc-Team/android_prebuilt_linaro/tree/linaro-4.9
