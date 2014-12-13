@@ -120,6 +120,9 @@ BOARD_RIL_CLASS := ../../../device/htc/evita/ril
 BOARD_RIL_NO_CELLINFOLIST := true
 BOARD_USES_LEGACY_MMAP := true
 
+# SElinux
+include device/qcom/sepolicy/sepolicy.mk
+
 # Vold
 BOARD_VOLD_MAX_PARTITIONS := 37
 
