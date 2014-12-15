@@ -17,5 +17,8 @@ PRODUCT_BRAND := htc
 PRODUCT_MODEL := One XL
 PRODUCT_MANUFACTURER := HTC
 
-# Set Build Bingerprint / ID / Product Name
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=htc_evita BUILD_FINGERPRINT=htc/cingular_us/evita:4.2.2/JDQ39/285445.1:user/release-keys PRIVATE_BUILD_DESC="5.18.502.1 CL285445 release-keys" BUILD_NUMBER=79936
+# Device overrides
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRODUCT_NAME=evita \
+    PRIVATE_BUILD_DESC="5.18.502.1 CL285445 release-keys" \
+    BUILD_FINGERPRINT="htc/cingular_us/evita:4.2.2/JDQ39/285445.1:user/release-keys"
