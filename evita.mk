@@ -294,8 +294,15 @@ PRODUCT_COPY_FILES += \
 
 # Widevine
 PRODUCT_COPY_FILES += \
-    device/htc/evita/prebuilt/vendor/lib/libWVStreamControlAPI_L3.so:/system/vendor/lib/libWVStreamControlAPI_L3.so \
-    device/htc/evita/prebuilt/vendor/lib/libwvm.so:/system/vendor/lib/libwvm.so
+    device/htc/evita/prebuilt/lib/libdrmdecrypt.so:/system/lib/libdrmdecrypt.so \
+    device/htc/evita/prebuilt/vendor/lib/drm/libdrmwvmplugin.so:/system/vendor/lib/drm/libdrmwvmplugin.so \
+    device/htc/evita/prebuilt/vendor/lib/libQSEEComAPI.so:/system/vendor/lib/libQSEEComAPI.so \
+    device/htc/evita/prebuilt/vendor/lib/libWVStreamControlAPI_L1.so:/system/vendor/lib/libWVStreamControlAPI_L1.so \
+    device/htc/evita/prebuilt/vendor/lib/libdrmfs.so:/system/vendor/lib/libdrmfs.so \
+    device/htc/evita/prebuilt/vendor/lib/libdrmtime.so:/system/vendor/lib/libdrmtime.so \
+    device/htc/evita/prebuilt/vendor/lib/libwvdrm_L1.so:/system/vendor/lib/libwvdrm_L1.so \
+    device/htc/evita/prebuilt/vendor/lib/libwvm.so:/system/vendor/lib/libwvm.so \
+    device/htc/evita/prebuilt/vendor/lib/mediadrm/libwvdrmengine.so:/system/vendor/lib/mediadrm/libwvdrmengine.so
 
 # NFC and Qualcomm Extra
 PRODUCT_COPY_FILES += \
