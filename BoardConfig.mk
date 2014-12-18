@@ -163,7 +163,8 @@ BOARD_SEPOLICY_UNION += \
     system.te \
     ueventd.te \
     wpa.te \
-    wpa_socket.te
+    wpa_socket.te \
+    zygote.te
 
 # Hardware tunables
 BOARD_HARDWARE_CLASS := device/htc/evita/cmhw
