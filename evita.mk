@@ -350,6 +350,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
+    qcom.hw.aac.encoder=true \
     media.stagefright.use-awesome=true
 
 # Thermal
