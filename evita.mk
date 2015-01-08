@@ -337,6 +337,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.vr.enable=false \
     persist.audio.handset.mic=digital \
     persist.audio.speaker.location=high \
+    qcom.hw.aac.encoder=true \
     ro.qc.sdk.audio.fluencetype=fluence
 
 # Display
@@ -350,8 +351,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
-    qcom.hw.aac.encoder=true \
-    media.stagefright.use-awesome=true
+    persist.sys.media.use-awesome=true
 
 # Thermal
 PRODUCT_PROPERTY_OVERRIDES += \
