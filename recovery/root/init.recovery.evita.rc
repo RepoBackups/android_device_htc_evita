@@ -20,8 +20,6 @@ on boot
     setprop usb.product.adb 0ff9
     setprop usb.product.mtpadb 0ca8
 
-    # Services
-    start choice_fn
     start chargeled
 
 on charger
@@ -37,18 +35,6 @@ on property:recovery.perf.mode=1
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor performance
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor performance
-
-service choice_fn /sbin/choice_fn
-    disabled
-
-service power_test /sbin/power_test
-    disabled
-
-service offmode_charging /sbin/offmode_charging
-    disabled
-
-service detect_key /sbin/detect_key
-    disabled
 
 service chargeled /sbin/chargeled
     disabled

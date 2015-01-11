@@ -111,6 +111,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/htc/evita/prebuilt/bin/akmd:/system/bin/akmd \
     device/htc/evita/prebuilt/bin/charging:/system/bin/charging \
+    device/htc/evita/prebuilt/bin/ewtzmud:/system/bin/ewtzmud \
     device/htc/evita/prebuilt/bin/hci_qcomm_init:/system/bin/hci_qcomm_init \
     device/htc/evita/prebuilt/bin/mm-qcamera-daemon:/system/bin/mm-qcamera-daemon \
     device/htc/evita/prebuilt/bin/mpdecision:/system/bin/mpdecision \
@@ -134,33 +135,14 @@ PRODUCT_COPY_FILES += \
     device/htc/evita/prebuilt/etc/firmware/wlan/prima/WCNSS_cfg.dat:/system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
     device/htc/evita/prebuilt/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin:/system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 
-# Media Config
-PRODUCT_COPY_FILES += \
-    device/htc/evita/prebuilt/etc/media_codecs.xml:/system/etc/media_codecs.xml \
-    device/htc/evita/prebuilt/etc/media_profiles.xml:/system/etc/media_profiles.xml
-
-# GPS and Host Config
-PRODUCT_COPY_FILES += \
-    device/htc/evita/prebuilt/etc/agps_rm:/system/etc/agps_rm \
-    device/htc/evita/prebuilt/etc/gps.conf:/system/etc/gps.conf \
-    device/htc/evita/prebuilt/etc/host:/system/etc/host \
-    device/htc/evita/prebuilt/etc/init.d/04host:/system/etc/init.d/04host
-
-# Qualcomm Scripts
-PRODUCT_COPY_FILES += \
-    device/htc/evita/prebuilt/etc/init.evita.bt.sh:/system/etc/init.evita.bt.sh \
-    device/htc/evita/prebuilt/etc/init.evita.fm.sh:/system/etc/init.evita.fm.sh
-
-# WPA, WIFI, NFC and Thermal config
+# WiFi
 PRODUCT_COPY_FILES += \
     device/htc/evita/prebuilt/etc/hostapd/hostapd_default.conf:/system/etc/hostapd/hostapd_default.conf \
-    device/htc/evita/prebuilt/etc/nfcee_access.xml:/system/etc/nfcee_access.xml \
-    device/htc/evita/prebuilt/etc/thermald.conf:/system/etc/thermald.conf \
+    device/htc/evita/prebuilt/etc/wifi/WCNSS_qcom_cfg.ini:/system/etc/wifi/WCNSS_qcom_cfg.ini \
     device/htc/evita/prebuilt/etc/wifi/p2p_supplicant_overlay.conf:/system/etc/wifi/p2p_supplicant_overlay.conf \
-    device/htc/evita/prebuilt/etc/wifi/wpa_supplicant_overlay.conf:/system/etc/wifi/wpa_supplicant_overlay.conf \
-    device/htc/evita/prebuilt/etc/wifi/WCNSS_qcom_cfg.ini:/system/etc/wifi/WCNSS_qcom_cfg.ini
+    device/htc/evita/prebuilt/etc/wifi/wpa_supplicant_overlay.conf:/system/etc/wifi/wpa_supplicant_overlay.conf
 
-# Sound Configs
+# Audio
 PRODUCT_COPY_FILES += \
     device/htc/evita/prebuilt/etc/audio_policy.conf:/system/etc/audio_policy.conf \
     device/htc/evita/prebuilt/etc/snd_soc_msm/snd_soc_msm_2x:/system/etc/snd_soc_msm/snd_soc_msm_2x \
@@ -170,18 +152,35 @@ PRODUCT_COPY_FILES += \
     device/htc/evita/prebuilt/etc/soundimage/srsfx_trumedia_51.cfg:/system/etc/soundimage/srsfx_trumedia_51.cfg \
     device/htc/evita/prebuilt/etc/soundimage/srsfx_trumedia_movie.cfg:/system/etc/soundimage/srsfx_trumedia_movie.cfg \
     device/htc/evita/prebuilt/etc/soundimage/srsfx_trumedia_music.cfg:/system/etc/soundimage/srsfx_trumedia_music.cfg \
-    device/htc/evita/prebuilt/etc/soundimage/srsfx_trumedia_voice.cfg:/system/etc/soundimage/srsfx_trumedia_voice.cfg
+    device/htc/evita/prebuilt/etc/soundimage/srsfx_trumedia_voice.cfg:/system/etc/soundimage/srsfx_trumedia_voice.cfg \
+    device/htc/evita/prebuilt/lib/libacdbloader.so:/system/lib/libacdbloader.so \
+    device/htc/evita/prebuilt/lib/libaudcal.so:/system/lib/libaudcal.so
+
+# Scripts
+PRODUCT_COPY_FILES += \
+    device/htc/evita/prebuilt/etc/init.evita.bt.sh:/system/etc/init.evita.bt.sh \
+    device/htc/evita/prebuilt/etc/init.evita.fm.sh:/system/etc/init.evita.fm.sh
+
+# Hosts
+PRODUCT_COPY_FILES += \
+    device/htc/evita/prebuilt/etc/host:/system/etc/host \
+    device/htc/evita/prebuilt/etc/init.d/04host:/system/etc/init.d/04host
+
+# Thermal and Perf
+PRODUCT_COPY_FILES += \
+    device/htc/evita/prebuilt/etc/thermald.conf:/system/etc/thermald.conf \
+    device/htc/evita/prebuilt/vendor/lib/libqc-opt.so:/system/vendor/lib/libqc-opt.so
+
+# NFC
+PRODUCT_COPY_FILES += \
+    device/htc/evita/prebuilt/etc/nfcee_access.xml:/system/etc/nfcee_access.xml \
+    device/htc/evita/prebuilt/vendor/firmware/libpn544_fw.so:/system/vendor/firmware/libpn544_fw.so
 
 # Hardware
 PRODUCT_COPY_FILES += \
     device/htc/evita/prebuilt/lib/hw/camera.vendor.msm8960.so:/system/lib/hw/camera.vendor.msm8960.so \
     device/htc/evita/prebuilt/lib/hw/nfc.default.so:/system/lib/hw/nfc.default.so \
     device/htc/evita/prebuilt/lib/hw/sensors.default.so:/system/lib/hw/sensors.default.so
-
-# Audio
-PRODUCT_COPY_FILES += \
-    device/htc/evita/prebuilt/lib/libacdbloader.so:/system/lib/libacdbloader.so \
-    device/htc/evita/prebuilt/lib/libaudcal.so:/system/lib/libaudcal.so
 
 # Camera
 PRODUCT_COPY_FILES += \
@@ -254,12 +253,16 @@ PRODUCT_COPY_FILES += \
 
 # Media
 PRODUCT_COPY_FILES += \
+    device/htc/evita/prebuilt/etc/media_codecs.xml:/system/etc/media_codecs.xml \
+    device/htc/evita/prebuilt/etc/media_profiles.xml:/system/etc/media_profiles.xml \
     device/htc/evita/prebuilt/lib/libExtendedExtractor.so:/system/lib/libExtendedExtractor.so \
     device/htc/evita/prebuilt/lib/libI420colorconvert.so:/system/lib/libI420colorconvert.so \
     device/htc/evita/prebuilt/lib/libmm-color-convertor.so:/system/lib/libmm-color-convertor.so
 
 # GPS
 PRODUCT_COPY_FILES += \
+    device/htc/evita/prebuilt/etc/agps_rm:/system/etc/agps_rm \
+    device/htc/evita/prebuilt/etc/gps.conf:/system/etc/gps.conf \
     device/htc/evita/prebuilt/lib/libgeofence.so:/system/lib/libgeofence.so \
     device/htc/evita/prebuilt/lib/libloc_api_v02.so:/system/lib/libloc_api_v02.so
 
@@ -304,45 +307,21 @@ PRODUCT_COPY_FILES += \
     device/htc/evita/prebuilt/vendor/lib/libwvm.so:/system/vendor/lib/libwvm.so \
     device/htc/evita/prebuilt/vendor/lib/mediadrm/libwvdrmengine.so:/system/vendor/lib/mediadrm/libwvdrmengine.so
 
-# NFC and Qualcomm Extra
-PRODUCT_COPY_FILES += \
-    device/htc/evita/prebuilt/vendor/lib/libqc-opt.so:/system/vendor/lib/libqc-opt.so \
-    device/htc/evita/prebuilt/vendor/firmware/libpn544_fw.so:/system/vendor/firmware/libpn544_fw.so
-
 # Default Properties
 ADDITIONAL_DEFAULT_PROPERTIES += \
     persist.sys.root_access=3 \
-    ro.adb.secure=3 \
+    ro.adb.secure=0 \
     ro.secure=0
-
-# Extra
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.checkjni=false \
-    dalvik.vm.dexopt-flags=m=v,o=y \
-    dalvik.vm.lockprof.threshold=500 \
-    persist.service.adb.enable=1 \
-    persist.service.debuggable=1 \
-    persist.sys.purgeable_assets=1 \
-    persist.sys.use_16bpp_alpha=1 \
-    ro.com.google.locationfeatures=1 \
-    ro.debuggable=1 \
-    ro.ksm.default=1 \
-    ro.setupwizard.enable_bypass=1 \
-    ro.sf.lcd_density=320
 
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
     lpa.decode=true \
     persist.audio.fluence.mode=endfire \
-    persist.audio.vr.enable=false \
     persist.audio.handset.mic=digital \
     persist.audio.speaker.location=high \
+    persist.audio.vr.enable=false \
     qcom.hw.aac.encoder=true \
     ro.qc.sdk.audio.fluencetype=fluence
-
-# Camera
-PRODUCT_PROPERTY_OVERRIDES += \
-    camera2.portability.force_api=1
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -350,8 +329,55 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.egl.hw=1 \
     debug.mdpcomp.logs=0 \
     debug.sf.hw=1 \
+    persist.hwc.mdpcomp.enable=true \
     ro.opengles.version=131072 \
-    persist.hwc.mdpcomp.enable=true
+    ro.sf.lcd_density=320
+
+# NFC
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.nfc.fw_download=true \
+    debug.nfc.fw_boot_download=false \
+    debug.nfc.se=true \
+    ro.nfc.port=I2C
+
+# Dalvik
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.checkjni=false \
+    dalvik.vm.dexopt-flags=m=v,o=y \
+    dalvik.vm.lockprof.threshold=500
+
+# Extra
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.service.adb.enable=1 \
+    persist.service.debuggable=1 \
+    persist.sys.purgeable_assets=1 \
+    persist.sys.root_access=3 \
+    persist.sys.use_16bpp_alpha=1 \
+    ro.adb.secure=0 \
+    ro.com.google.locationfeatures=1 \
+    ro.debuggable=1 \
+    ro.ksm.default=1 \
+    ro.secure=0 \
+    ro.setupwizard.enable_bypass=1
+
+# Radio
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.baseband.arch=msm \
+    ro.telephony.call_ring.multiple=0
+
+# UMS
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.usb.config=mtp \
+    ro.vold.umsdirtyratio=40
+
+# WiFi
+PRODUCT_PROPERTY_OVERRIDES += \
+    wifi.interface=wlan0 \
+    wifi.supplicant_scan_interval=255
+
+# Camera
+PRODUCT_PROPERTY_OVERRIDES += \
+    camera2.portability.force_api=1
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -361,31 +387,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.thermal.monitor=true
 
-# Radio
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.telephony.call_ring.multiple=0 \
-    ro.baseband.arch=msm
-
-# WiFi
-PRODUCT_PROPERTY_OVERRIDES += \
-    wifi.interface=wlan0 \
-    wifi.supplicant_scan_interval=255
-
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.qualcomm.bt.hci_transport=smd
-
-# NFC
-PRODUCT_PROPERTY_OVERRIDES += \
-    debug.nfc.fw_download=true \
-    debug.nfc.fw_boot_download=false \
-    debug.nfc.se=true \
-    ro.nfc.port=I2C
-
-# UMS
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp,adb \
-    ro.vold.umsdirtyratio=40
 
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \

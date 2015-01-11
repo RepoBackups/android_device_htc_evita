@@ -1,12 +1,8 @@
-# Vendor
-BOARD_VENDOR := htc
-TARGET_SPECIFIC_HEADER_PATH := device/htc/evita/include
-
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8960
 TARGET_NO_BOOTLOADER := true
 
-# Release tools
+# Extensions
 TARGET_RELEASETOOLS_EXTENSIONS := device/htc/evita
 TARGET_BOARD_INFO_FILE ?= device/htc/evita/bootloader.txt
 
@@ -25,7 +21,7 @@ TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 # Kernel
 BOARD_KERNEL_BASE := 0x80400000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=evita
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=evita androidboot.selinux=permissive
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01700000
 TARGET_KERNEL_SOURCE := kernel/htc/evita
 TARGET_KERNEL_CONFIG := evita_defconfig
@@ -48,18 +44,18 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/evita/bluetooth
 # Graphics
 BOARD_EGL_CFG := device/htc/evita/prebuilt/vendor/lib/egl/egl.cfg
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
-TARGET_DISPLAY_INSECURE_MM_HEAP := true
 TARGET_DISPLAY_USE_RETIRE_FENCE := true
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
 USE_OPENGL_RENDERER := true
+TARGET_DISPLAY_INSECURE_MM_HEAP := true
 
 # Camera
 BOARD_NEEDS_MEMORYHEAPPMEM := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_RELEASE_CPPFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 
-# Wifi
+# WiFi
 BOARD_HAS_QCOM_WLAN := true
 BOARD_WLAN_DEVICE := qcwcn
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
@@ -84,9 +80,10 @@ BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 # Recovery
-TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-TARGET_RECOVERY_DEVICE_MODULES += chargeled
 BOARD_RECOVERY_BLDRMSG_OFFSET := 2048
+BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
+TARGET_RECOVERY_DEVICE_MODULES += chargeled
+TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 ifeq ($(RECOVERY_VARIANT),twrp)
     TARGET_RECOVERY_FSTAB := device/htc/evita/recovery/twrp.fstab
@@ -98,7 +95,6 @@ endif
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/htc/evita/recovery/source/recovery_keys.c
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_RECOVERY_SWIPE := true
-BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
 TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/class/leds/lcd-backlight/brightness\"
 
 # TWRP
@@ -118,7 +114,7 @@ BOARD_RIL_CLASS := ../../../device/htc/evita/ril
 BOARD_RIL_NO_CELLINFOLIST := true
 BOARD_USES_LEGACY_MMAP := true
 
-# SElinux
+# SELinux
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += device/htc/evita/sepolicy
 
@@ -126,35 +122,41 @@ BOARD_SEPOLICY_UNION += \
     akmd.te \
     ewtzmud.te
 
-# Vold
-BOARD_VOLD_MAX_PARTITIONS := 37
-
-# Media
-TARGET_NO_ADAPTIVE_PLAYBACK := true
-
-# QCOM
-BOARD_USES_QCOM_HARDWARE := true
-
-# Fonts
-EXTENDED_FONT_FOOTPRINT := true
-
-# Lights
-TARGET_PROVIDES_LIBLIGHT := true
-
-# Power
-TARGET_POWERHAL_VARIANT := evita
+# Vendor
+BOARD_VENDOR := htc
 
 # Libril
 BOARD_PROVIDES_LIBRIL := true
 
+# Vold
+BOARD_VOLD_MAX_PARTITIONS := 37
+
+# Fonts
+EXTENDED_FONT_FOOTPRINT := true
+
+# Power
+TARGET_POWERHAL_VARIANT := evita
+
+# QCOM
+BOARD_USES_QCOM_HARDWARE := true
+
+# Lights
+TARGET_PROVIDES_LIBLIGHT := true
+
 # Flags
 COMMON_GLOBAL_CFLAGS += -DHTCLOG
+
+# Media
+TARGET_NO_ADAPTIVE_PLAYBACK := true
 
 # CMHW
 BOARD_HARDWARE_CLASS := device/htc/evita/cmhw
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += device/htc/evita/overlay
+
+# Includes
+TARGET_SPECIFIC_HEADER_PATH := device/htc/evita/include
 
 # Charger
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/htc_lpm/lpm_mode
