@@ -78,6 +78,98 @@ PRODUCT_PACKAGES += \
     Torch \
     com.android.future.usb.accessory
 
+# Default Properties
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    persist.sys.root_access=3 \
+    ro.adb.secure=0 \
+    ro.secure=0
+
+# Audio
+PRODUCT_PROPERTY_OVERRIDES += \
+    lpa.decode=true \
+    persist.audio.fluence.mode=endfire \
+    persist.audio.handset.mic=digital \
+    persist.audio.speaker.location=high \
+    persist.audio.vr.enable=false \
+    qcom.hw.aac.encoder=true \
+    ro.qc.sdk.audio.fluencetype=fluence
+
+# Display
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.composition.type=dyn \
+    debug.egl.hw=1 \
+    debug.mdpcomp.logs=0 \
+    debug.sf.hw=1 \
+    persist.hwc.mdpcomp.enable=true \
+    ro.opengles.version=131072 \
+    ro.sf.lcd_density=320
+
+# NFC
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.nfc.fw_download=true \
+    debug.nfc.fw_boot_download=false \
+    debug.nfc.se=true \
+    ro.nfc.port=I2C
+
+# Dalvik
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.checkjni=false \
+    dalvik.vm.dexopt-flags=m=v,o=y \
+    dalvik.vm.lockprof.threshold=500
+
+# Extra
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.service.adb.enable=1 \
+    persist.service.debuggable=1 \
+    persist.sys.purgeable_assets=1 \
+    persist.sys.root_access=3 \
+    persist.sys.use_16bpp_alpha=1 \
+    ro.adb.secure=0 \
+    ro.com.google.locationfeatures=1 \
+    ro.debuggable=1 \
+    ro.ksm.default=1 \
+    ro.secure=0 \
+    ro.setupwizard.enable_bypass=1
+
+# Radio
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.baseband.arch=msm \
+    ro.telephony.call_ring.multiple=0
+
+# UMS
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.usb.config=mtp \
+    ro.vold.umsdirtyratio=40
+
+# WiFi
+PRODUCT_PROPERTY_OVERRIDES += \
+    wifi.interface=wlan0 \
+    wifi.supplicant_scan_interval=255
+
+# Camera
+PRODUCT_PROPERTY_OVERRIDES += \
+    camera2.portability.force_api=1
+
+# Media
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.media.use-awesome=true
+
+# Thermal
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.thermal.monitor=true
+
+# Bluetooth
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.qualcomm.bt.hci_transport=smd
+
+# Perf
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.extension_library=/system/vendor/lib/libqc-opt.so
+
+# Density
+PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
+PRODUCT_AAPT_PREF_CONFIG := xhdpi
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/base/nfc-extras/com.android.nfc_extras.xml:/system/etc/permissions/com.android.nfc_extras.xml \
@@ -306,95 +398,3 @@ PRODUCT_COPY_FILES += \
     device/htc/evita/prebuilt/vendor/lib/libwvdrm_L1.so:/system/vendor/lib/libwvdrm_L1.so \
     device/htc/evita/prebuilt/vendor/lib/libwvm.so:/system/vendor/lib/libwvm.so \
     device/htc/evita/prebuilt/vendor/lib/mediadrm/libwvdrmengine.so:/system/vendor/lib/mediadrm/libwvdrmengine.so
-
-# Default Properties
-ADDITIONAL_DEFAULT_PROPERTIES += \
-    persist.sys.root_access=3 \
-    ro.adb.secure=0 \
-    ro.secure=0
-
-# Audio
-PRODUCT_PROPERTY_OVERRIDES += \
-    lpa.decode=true \
-    persist.audio.fluence.mode=endfire \
-    persist.audio.handset.mic=digital \
-    persist.audio.speaker.location=high \
-    persist.audio.vr.enable=false \
-    qcom.hw.aac.encoder=true \
-    ro.qc.sdk.audio.fluencetype=fluence
-
-# Display
-PRODUCT_PROPERTY_OVERRIDES += \
-    debug.composition.type=dyn \
-    debug.egl.hw=1 \
-    debug.mdpcomp.logs=0 \
-    debug.sf.hw=1 \
-    persist.hwc.mdpcomp.enable=true \
-    ro.opengles.version=131072 \
-    ro.sf.lcd_density=320
-
-# NFC
-PRODUCT_PROPERTY_OVERRIDES += \
-    debug.nfc.fw_download=true \
-    debug.nfc.fw_boot_download=false \
-    debug.nfc.se=true \
-    ro.nfc.port=I2C
-
-# Dalvik
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.checkjni=false \
-    dalvik.vm.dexopt-flags=m=v,o=y \
-    dalvik.vm.lockprof.threshold=500
-
-# Extra
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.service.adb.enable=1 \
-    persist.service.debuggable=1 \
-    persist.sys.purgeable_assets=1 \
-    persist.sys.root_access=3 \
-    persist.sys.use_16bpp_alpha=1 \
-    ro.adb.secure=0 \
-    ro.com.google.locationfeatures=1 \
-    ro.debuggable=1 \
-    ro.ksm.default=1 \
-    ro.secure=0 \
-    ro.setupwizard.enable_bypass=1
-
-# Radio
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.baseband.arch=msm \
-    ro.telephony.call_ring.multiple=0
-
-# UMS
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp \
-    ro.vold.umsdirtyratio=40
-
-# WiFi
-PRODUCT_PROPERTY_OVERRIDES += \
-    wifi.interface=wlan0 \
-    wifi.supplicant_scan_interval=255
-
-# Camera
-PRODUCT_PROPERTY_OVERRIDES += \
-    camera2.portability.force_api=1
-
-# Media
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.media.use-awesome=true
-
-# Thermal
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.thermal.monitor=true
-
-# Bluetooth
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.qualcomm.bt.hci_transport=smd
-
-# Perf
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.extension_library=/system/vendor/lib/libqc-opt.so
-
-# Density
-PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
-PRODUCT_AAPT_PREF_CONFIG := xhdpi
