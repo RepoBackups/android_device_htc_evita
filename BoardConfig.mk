@@ -105,6 +105,7 @@ TW_NO_SCREEN_BLANK := true
 
 # Radio
 BOARD_RIL_CLASS := ../../../device/htc/evita/ril
+BOARD_RIL_NO_CELLINFOLIST := true
 BOARD_USES_LEGACY_MMAP := true
 
 # SELinux
