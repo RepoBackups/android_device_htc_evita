@@ -91,12 +91,6 @@ else
     TARGET_RECOVERY_FSTAB := device/htc/evita/rootdir/fstab.evita
 endif
 
-# CWM
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/htc/evita/recovery/source/recovery_keys.c
-BOARD_HAS_NO_SELECT_BUTTON := true
-BOARD_RECOVERY_SWIPE := true
-TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/class/leds/lcd-backlight/brightness\"
-
 # TWRP
 BOARD_HAS_NO_REAL_SDCARD := true
 DEVICE_RESOLUTION := 720x1280
@@ -111,7 +105,6 @@ TW_NO_SCREEN_BLANK := true
 
 # Radio
 BOARD_RIL_CLASS := ../../../device/htc/evita/ril
-BOARD_RIL_NO_CELLINFOLIST := true
 BOARD_USES_LEGACY_MMAP := true
 
 # SELinux
