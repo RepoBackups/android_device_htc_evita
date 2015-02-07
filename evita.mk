@@ -114,7 +114,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Dalvik
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.checkjni=false \
-    dalvik.vm.dexopt-flags=m=v,o=y \
+    dalvik.vm.dexopt-flags=m=y \
     dalvik.vm.lockprof.threshold=500
 
 # Extra
