@@ -75,7 +75,6 @@ PRODUCT_PACKAGES += \
 
 # Misc
 PRODUCT_PACKAGES += \
-    Torch \
     com.android.future.usb.accessory
 
 # Default Properties
