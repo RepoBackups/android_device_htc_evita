@@ -27,6 +27,12 @@ TARGET_KERNEL_SOURCE := kernel/htc/evita
 TARGET_KERNEL_CONFIG := evita_defconfig
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := linaro-4.9-cortex-a15
 
+# Dex-preoptimization
+WITH_DEXPREOPT := true
+WITH_DEXPREOPT_BOOT_IMG_ONLY := true
+DONT_DEXPREOPT_PREBUILTS := true
+MALLOC_IMPL := dlmalloc
+
 # Audio
 BOARD_USES_ALSA_AUDIO := true
 BOARD_USES_FLUENCE_INCALL := true
@@ -139,6 +145,9 @@ COMMON_GLOBAL_CFLAGS += -DHTCLOG
 
 # Media
 TARGET_NO_ADAPTIVE_PLAYBACK := true
+
+# Boot-Animation
+TARGET_BOOTANIMATION_TEXTURE_CACHE := false
 
 # CMHW
 BOARD_HARDWARE_CLASS := device/htc/evita/cmhw

@@ -105,6 +105,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.mdpcomp.logs=0 \
     debug.sf.hw=1 \
     persist.hwc.mdpcomp.enable=true \
+    persist.sys.force_highendgfx=true \
     ro.opengles.version=131072 \
     ro.sf.lcd_density=320
 
@@ -120,6 +121,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.checkjni=false \
     dalvik.vm.dexopt-flags=m=y \
     dalvik.vm.lockprof.threshold=500
+
+# Low-ram
+PRODUCT_PROPERTY_OVERRIDES += \
+    config.disable_atlas=true \
+    dalvik.vm.jit.codecachesize=0 \
+    ro.config.low_ram=true \
+    ro.config.max_starting_bg=8 \
+    ro.sys.fw.bg_apps_limit=16
 
 # Extra
 PRODUCT_PROPERTY_OVERRIDES += \
