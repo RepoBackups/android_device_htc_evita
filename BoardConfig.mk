@@ -29,8 +29,6 @@ TARGET_KERNEL_CUSTOM_TOOLCHAIN := linaro-4.9-cortex-a15
 
 # Dex-preoptimization
 WITH_DEXPREOPT := true
-WITH_DEXPREOPT_BOOT_IMG_ONLY := true
-DONT_DEXPREOPT_PREBUILTS := true
 MALLOC_IMPL := dlmalloc
 
 # Audio
