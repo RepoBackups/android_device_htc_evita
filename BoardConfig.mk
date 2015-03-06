@@ -120,6 +120,9 @@ BOARD_SEPOLICY_UNION += \
 # Vendor
 BOARD_VENDOR := htc
 
+# Low-ram optimizations
+PAC_LOW_RAM_DEVICE := true
+
 # Libril
 BOARD_PROVIDES_LIBRIL := true
 
