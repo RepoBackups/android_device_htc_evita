@@ -23,6 +23,9 @@ ro.kernel.android.checkjni=0
 ro.kernel.checkjni=0
 ro.ril.disable.power.collapse=0
 
+# OTG
+persist.sys.isUsbOtgEnabled=true
+
 # Network
 net.dns1=8.8.8.8
 net.dns2=8.8.4.4
