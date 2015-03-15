@@ -115,7 +115,8 @@ BOARD_SEPOLICY_DIRS += device/htc/evita/sepolicy
 
 BOARD_SEPOLICY_UNION += \
     akmd.te \
-    ewtzmud.te
+    ewtzmud.te \
+    kernel.te
 
 # Vendor
 BOARD_VENDOR := htc
