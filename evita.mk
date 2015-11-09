@@ -219,8 +219,7 @@ PRODUCT_COPY_FILES += \
     device/htc/evita/prebuilt/bin/netmgrd:/system/bin/netmgrd \
     device/htc/evita/prebuilt/bin/qmuxd:/system/bin/qmuxd \
     device/htc/evita/prebuilt/bin/radish:/system/bin/radish \
-    device/htc/evita/prebuilt/bin/rmt_storage:/system/bin/rmt_storage \
-    device/htc/evita/prebuilt/bin/thermald:/system/bin/thermald
+    device/htc/evita/prebuilt/bin/rmt_storage:/system/bin/rmt_storage
 
 # WiFi
 PRODUCT_COPY_FILES += \
@@ -257,7 +256,6 @@ PRODUCT_COPY_FILES += \
 # Qualcomm & Thermal
 PRODUCT_COPY_FILES += \
     device/htc/evita/prebuilt/etc/init.qcom.bt.sh:/system/etc/init.qcom.bt.sh \
-    device/htc/evita/prebuilt/etc/thermald.conf:system/etc/thermald.conf \
     device/htc/evita/prebuilt/vendor/lib/libqc-opt.so:/system/vendor/lib/libqc-opt.so
 
 # BSOD Killer
